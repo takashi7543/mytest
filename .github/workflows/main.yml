@@ -27,8 +27,14 @@ jobs:
         run: |
           echo "hoge=true" >> ${GITHUB_ENV}
               
-      - name: debug
+      - name: debug1
         run: |
           if [ true = false ]; then
+            echo 'true'
+          fi
+              
+      - name: debug2
+        run: |
+          if [ false = false ]; then
             echo 'true'
           fi

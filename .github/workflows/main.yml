@@ -28,6 +28,6 @@ jobs:
           hoge=true
       
       - name: run if need
-        if: contains(env.hoge, "true")
+        if: contains(env.hoge, 'true')
         run: echo 'hage'
         

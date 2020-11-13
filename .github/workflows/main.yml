@@ -31,3 +31,7 @@ jobs:
         if: contains(env.hoge, 'true')
         run: echo 'hage'
         
+      - name: debug
+        run: |
+          echo ${env}
+          echo ${hoge}

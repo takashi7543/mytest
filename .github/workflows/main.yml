@@ -25,13 +25,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          hoge=true
-      
-      - name: run if need
-        if: contains(env.hoge, 'true')
-        run: echo 'hage'
-        
+          echo "hoge=true" >> ${GITHUB_ENV}
+              
       - name: debug
         run: |
-          echo ${env}
-          echo ${hoge}
+          if [ true = false ]; then
+            echo 'true'
+          fi

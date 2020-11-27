@@ -18,7 +18,7 @@ jobs:
   work1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: ${{github.event.inputs.useCommonDb != 'true'}}
+    if: ${{github.event.inputs.myVal != 'true'}}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,13 +30,13 @@ jobs:
           echo ${{github}}
           echo ${{github.event}}
           echo ${{github.event.inputs}}
-          echo ${{github.event.inputs.useCommonDB}}
+          echo ${{github.event.inputs.myVal}}
 
   # This workflow contains a single job called "build"
   work2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: ${{github.event.inputs.useCommonDb == 'true'}}
+    if: ${{github.event.inputs.myVal == 'true'}}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

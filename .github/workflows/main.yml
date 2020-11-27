@@ -26,14 +26,19 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Run a one-line script 1
-        with:
-          inlineScript |
-            echo ${{github.event.inputs.myVal}}
-            if [ ${{github.event.inputs.myVal}} = false ]; then
-              echo 'false'
-            else 
-              echo 'true'
-            fi
+        run: |
+          echo ${{github.event.inputs.myVal}}
+          if [ ${{github.event.inputs.myVal}} = false ]; then
+            echo 'false'
+          else 
+            echo 'true'
+          fi
+          if [ ${{github.event.inputs.myVal}} = 'false' ]; then
+            echo 'false'
+          else 
+            echo 'true'
+          fi
+
 
   # This workflow contains a single job called "build"
   work2:
@@ -47,13 +52,18 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Run a one-line script 2
-        with:
-          inlineScript |
-            echo ${{github.event.inputs.myVal}}
-            if [ ${{github.event.inputs.myVal}} = true ]; then
-              echo 'true'
-            else 
-              echo 'false'
-            fi
+        run: |
+          echo ${{github.event.inputs.myVal}}
+          if [ ${{github.event.inputs.myVal}} = true ]; then
+            echo 'true'
+          else 
+            echo 'false'
+          fi
+          if [ ${{github.event.inputs.myVal}} = 'true' ]; then
+            echo 'true'
+          else 
+            echo 'false'
+          fi
+
 
 

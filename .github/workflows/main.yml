@@ -71,6 +71,6 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Run a one-line script 2
-        run: echo ${github.event.inputs.useCommonDB}
+        run: echo ${{github.event.inputs.useCommonDB}}
 
 

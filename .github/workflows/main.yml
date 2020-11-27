@@ -31,6 +31,7 @@ jobs:
           echo ${{github.event}}
           echo ${{github.event.inputs}}
           echo ${{github.event.inputs.myVal}}
+          echo ${{github.event.inputs}} | jq
 
   # This workflow contains a single job called "build"
   work2:

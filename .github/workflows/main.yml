@@ -27,11 +27,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script 1
         run: 
-          echo ${{github}}
-          echo ${{github.event}}
-          echo ${{github.event.inputs}}
           echo ${{github.event.inputs.myVal}}
-          echo ${{github.event.inputs}} | jq
+          if [ ${{github.event.inputs.myVal}} = false ]; then
+            echo 'false'
+          else 
+            echo 'true'
+          fi
 
   # This workflow contains a single job called "build"
   work2:
@@ -45,6 +46,12 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Run a one-line script 2
-        run: echo ${{github.event.inputs.useCommonDB}}
+        run: 
+          echo ${{github.event.inputs.myVal}}
+          if [ ${{github.event.inputs.myVal}} = true ]; then
+            echo 'true'
+          else 
+            echo 'false'
+          fi
 
 

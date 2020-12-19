@@ -5,7 +5,7 @@
 2. Edit the config file. [default.json](config/default.json)
 3. init node_modules
 
-  `npm install`
+    `npm install`
 
 ### how to start
 Execute the following command

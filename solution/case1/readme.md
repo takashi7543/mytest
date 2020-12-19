@@ -1,8 +1,11 @@
-# now writing..
+# My file upload server
 
 ### Prerequisites
 1. node.js needs to be installed
-2. Edit the config file. [default.json](solution\case1\config\default.json)
+2. Edit the config file. [default.json](solution/case1/config/default.json)
+3. init node_modules
+
+  `npm install`
 
 ### how to start
 Execute the following command

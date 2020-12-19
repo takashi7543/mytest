@@ -1,0 +1,8 @@
+{
+  "server": {
+    "port": 3000,
+    "tiffUrl": "/hogehoge",
+    "csvUrl": "/piyopiyo",
+    "fileOutputPath": "c:/tmp"
+  }
+}

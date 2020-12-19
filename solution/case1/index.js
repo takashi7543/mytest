@@ -90,16 +90,19 @@ app.post(CSV_URL, function(req, res) {
   });
 });
 
-/*
-  write file & if need make folder
-*/
+/**
+ * writeFile - description
+ *
+ * @param  {Stirng} path     file output path
+ * @param  {String} contents base64 encode file
+ * @param  {function} cb   callback function
+ */
 function writeFile(path, contents, cb) {
   console.log(getDirName(path));
-  const ret = mkdirp.sync(getDirName(path));
+  mkdirp.sync(getDirName(path));
   fs.writeFile(path, contents, 'base64', cb);
 }
 
-// server start
-var server = app.listen(PORT, function() {
+const server = app.listen(PORT, function() {
   console.log('listening at port %s', server.address().port);
 });
